@@ -1,0 +1,37 @@
+<?php
+
+
+namespace App\fleet\app;
+
+
+use App\fleet\domain\Geolocation;
+
+class ParkVehicule
+{
+    private string $userId;
+    private string $vehicleRegistrationNumber;
+    private Geolocation $geolocation;
+
+    public function __construct(string $userId, string $vehicleRegistrationNumber, Geolocation $geolocation)
+    {
+        $this->userId = $userId;
+        $this->vehicleRegistrationNumber = $vehicleRegistrationNumber;
+        $this->geolocation = $geolocation;
+    }
+
+    public function getUserId(): string
+    {
+        return $this->userId;
+    }
+
+    public function getVehicleRegistrationNumber(): string
+    {
+        return $this->vehicleRegistrationNumber;
+    }
+
+    public function getGeoLocation(): Geolocation
+    {
+        return $this->geolocation;
+    }
+
+}
